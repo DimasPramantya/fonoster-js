@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@fonoster/sdk": "^0.15.20",
+    "@fonoster/voice": "^0.15.20"
+  }
+}

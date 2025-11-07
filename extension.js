@@ -3,20 +3,20 @@ const SDK = require("@fonoster/sdk");
 async function createTestNumber() {
   try {
     const client = new SDK.Client({
-      endpoint: "localhost:50051",
+      endpoint: "localhost:8449",
       allowInsecure: true,
       accessKeyId: "WO00000000000000000000000000000000",
     });
 
-    await client.login("admin@fonoster.local", "verifcontact");
+    await client.login("admin@fonoster.local", "changeme");
     
     const numbers = new SDK.Numbers(client);
 
     // Create extension 9999 that routes to your Voice App
     const number = await numbers.createNumber({
       name: "Voice App Test Extension",
-      telUrl: "tel:9999",
-      appRef: "8834ed7d-0c2f-494a-b1ab-f5fcc5b256ad", // Your "My Test App" ref
+      telUrl: "tel:9991",
+      appRef: "b50b18ba-130b-451e-9308-b2fa7cceb098", // Your "My Test App" ref
       city: "Test",
       country: "Test",
       countryIsoCode: "TT",

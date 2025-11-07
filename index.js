@@ -3,12 +3,12 @@ const SDK = require("@fonoster/sdk");
 // Replace these with your values
 const client = new SDK.Client({ 
   accessKeyId: "WO00000000000000000000000000000000",
-  endpoint: "localhost:50051",
+  endpoint: "localhost:8449",
   allowInsecure: true
 });
 
 // Use your actual username and password here
-client.login("admin@fonoster.local", "verifcontact").then(async () => {
+client.login("admin@fonoster.local", "changeme").then(async () => {
   const apikeys = new SDK.ApiKeys(client);
 
   apikeys.createApiKey({

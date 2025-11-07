@@ -3,29 +3,28 @@ const SDK = require("@fonoster/sdk");
 async function createAgents() {
   try {
     const client = new SDK.Client({
-      endpoint: "localhost:50051",
+      endpoint: "localhost:8449",
       allowInsecure: true,
       accessKeyId: "WO00000000000000000000000000000000",
     });
 
     console.log("Logging in...");
-    await client.login("admin@fonoster.local", "verifcontact");
+    await client.login("admin@fonoster.local", "changeme");
     console.log("Login successful!");
 
     const agents = new SDK.Agents(client);
-    await agents.deleteAgent("3306ff86-6079-4f31-ac48-6e051ced32eb");
-    await agents.deleteAgent("8a9d3efe-f0a4-4229-ba8e-1576c5370e7a");
+    // await agents.deleteAgent("fb77e7c4-a079-41e6-8118-087f36518344");
+    // await agents.deleteAgent("9a12780a-1b9c-4920-944a-30b5dd094ebd");
 
     // Create Agent 1
     console.log("Creating Agent 1...");
     const agent1 = await agents.createAgent({
       name: "Test Agent 1",
       username: "1001",
-      password: "test1234", // SIP password
-      privacy: "PRIVATE",
       enabled: true,
       maxContacts: 10,
-      domainRef: "6cd8df6f-1e37-4332-b182-c871dbe13f2f"
+      domainRef: "10898341-3870-4cfc-918f-374ba6bd07cf",
+      credentialsRef: "85081cca-2302-4335-9c4d-66a002dd4f88",
     });
     console.log("Agent 1 created:", agent1);
 
@@ -34,11 +33,10 @@ async function createAgents() {
     const agent2 = await agents.createAgent({
       name: "Test Agent 2",
       username: "1002",
-      password: "test1234", // SIP password
-      privacy: "PRIVATE",
       enabled: true,
       maxContacts: 10,
-      domainRef: "6cd8df6f-1e37-4332-b182-c871dbe13f2f"
+      domainRef: "10898341-3870-4cfc-918f-374ba6bd07cf",
+      credentialsRef: "85081cca-2302-4335-9c4d-66a002dd4f88",
     });
     console.log("Agent 2 created:", agent2);
 

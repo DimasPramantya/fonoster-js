@@ -3,20 +3,20 @@ const SDK = require("@fonoster/sdk");
 async function createDomain() {
   try {
     const client = new SDK.Client({
-      endpoint: "localhost:50051",
+      endpoint: "localhost:8449",
       allowInsecure: true,
       accessKeyId: "WO00000000000000000000000000000000",
     });
     console.log("Creating SIP Domain...");
     const domains = new SDK.Domains(client);
 
-    await client.login("admin@fonoster.local", "verifcontact");
+    await client.login("admin@fonoster.local", "changeme");
     let domain;
     try {
       domain = await domains.createDomain({
         name: "Local Domain",
         domainUri: "fonoster.local", // This is the SIP domain
-        accessControlListRef: null
+        accessControlListRef: null,
       });
       console.log("✅ Domain created:");
       console.log(`   Domain URI: ${domain.domainUri}`);

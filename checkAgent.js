@@ -3,12 +3,12 @@ const SDK = require("@fonoster/sdk");
 async function checkAgents() {
   try {
     const client = new SDK.Client({
-      endpoint: "localhost:50051",
+      endpoint: "localhost:8449",
       allowInsecure: true,
       accessKeyId: "WO00000000000000000000000000000000",
     });
 
-    await client.login("admin@fonoster.local", "verifcontact");
+    await client.login("admin@fonoster.local", "changeme");
     
     const agents = new SDK.Agents(client);
     const result = await agents.listAgents({ pageSize: 20 });

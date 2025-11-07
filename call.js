@@ -19,6 +19,7 @@ new VoiceServer().listen(async (req, voice) => {
   console.log(JSON.stringify(req, null, 2));
   
   try {
+    await voice.record()
     console.log("\n📱 Answering call...");
     await voice.answer();
     console.log("✅ Call answered successfully");

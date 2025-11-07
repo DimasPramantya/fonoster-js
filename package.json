@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@fonoster/sdk": "^0.15.20",
-    "@fonoster/voice": "^0.15.20"
+    "@fonoster/voice": "^0.15.20",
+    "@routr/sdk": "^2.13.13",
+    "nats": "^2.29.3"
   }
 }

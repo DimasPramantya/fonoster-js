@@ -4,13 +4,13 @@ async function registerApp() {
   try {
     // Step 1: Create client and login with username/password
     const client = new SDK.Client({
-      endpoint: "localhost:50051",
+      endpoint: "localhost:8449",
       allowInsecure: true,
       accessKeyId: "WO00000000000000000000000000000000",
     });
 
     console.log("Logging in...");
-    await client.login("admin@fonoster.local", "verifcontact");
+    await client.login("admin@fonoster.local", "changeme");
     console.log("Login successful!");
 
     // Step 2: Create application immediately after login
@@ -19,7 +19,7 @@ async function registerApp() {
     const appConfig = {
       name: "My Test App",
       type: "EXTERNAL",
-      endpoint: "0.tcp.ap.ngrok.io:18260",
+      endpoint: "0.tcp.ap.ngrok.io:15435",
       textToSpeech: {
         productRef: "tts.deepgram",
         config: {
